@@ -1,0 +1,39 @@
+<div class="example-container">
+
+  <mat-form-field  appearance="fill" >
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Name" name="name" #name="ngModel"  [(ngModel)]="itemFilter.name">
+
+  </mat-form-field>
+
+
+  <mat-form-field style="margin-left: 20px"  appearance="fill">
+    <mat-label>Category</mat-label>
+    <mat-select placeholder="Select category" name="category" #category="ngModel" [(ngModel)]="itemFilter.category">
+      <mat-option [value]="null">All</mat-option>
+      <mat-option value="Bat">Bat</mat-option>
+      <mat-option value="Ball">Ball</mat-option>
+      <mat-option value="Helmet">Helmet</mat-option>
+      <mat-option value="Shoes">Shoes</mat-option>
+      <mat-option value="Body Building">Body Building</mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 20px"  appearance="fill" >
+    <mat-label>Min Price</mat-label>
+    <input matInput type="number" placeholder="Min Price" name="name" #name="ngModel"  [(ngModel)]="itemFilter.min">
+
+  </mat-form-field>
+
+  <mat-form-field style="margin-left: 20px"  appearance="fill" >
+    <mat-label>Max Price</mat-label>
+    <input matInput type="number" placeholder="Max Price" name="name" #name="ngModel"  [(ngModel)]="itemFilter.max">
+
+  </mat-form-field>
+
+
+  <button mat-raised-button style="margin-left: 20px; vertical-align: super" color="primary" (click)="search()">
+    <mat-icon>search</mat-icon>
+    Search</button>
+</div>

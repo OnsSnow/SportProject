@@ -1,0 +1,65 @@
+
+<mat-card>
+  <form  class="example-form" #f="ngForm" (ngSubmit)="f.form.valid && editItem()">
+
+
+
+
+
+
+
+    <mat-card-header>
+
+      <mat-card-title>Edit Item</mat-card-title>
+
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field class="example-full-width" appearance="fill" >
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Name" name="name" #name="ngModel" required [(ngModel)]="item.name">
+        <mat-error *ngIf="name.invalid">Name required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field  class="example-full-width" appearance="fill">
+        <mat-label>Category</mat-label>
+        <mat-select placeholder="Select category" name="category" #category="ngModel" required [(ngModel)]="item.category">
+          <mat-option value="Bat">Bat</mat-option>
+          <mat-option value="Ball">Ball</mat-option>
+          <mat-option value="Helmet">Helmet</mat-option>
+          <mat-option value="Shoes">Shoes</mat-option>
+          <mat-option value="Body Building">Body Building</mat-option>
+        </mat-select>
+        <mat-error *ngIf="category.invalid">Category required</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" appearance="fill" >
+        <mat-label>Price</mat-label>
+        <input matInput placeholder="Price" type="number" name="price" #price="ngModel" required [(ngModel)]="item.price">
+        <mat-error *ngIf="price.invalid">Price required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width" appearance="fill" >
+        <mat-label>Quantitty</mat-label>
+        <input matInput placeholder="Quantity" type="number" name="quantity" #quantity="ngModel" required [(ngModel)]="item.quantity">
+        <mat-error *ngIf="quantity.invalid">Quantity required</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput  placeholder="Description"  name="description"   [(ngModel)]="item.description"></textarea>
+      </mat-form-field>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button mat-button color="primary" type="submit">Update</button>
+      <button  mat-button color="warn" type="reset">Cancel</button>
+
+    </mat-card-actions>
+
+
+
+  </form>
+</mat-card>

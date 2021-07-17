@@ -1,0 +1,22 @@
+<mat-card >
+
+  <mat-card-header class="example-full-width">
+
+    <mat-card-title>
+      Item List
+
+      <button mat-raised-button color="primary" class="btnAdd"  routerLink="/items/new">
+        <mat-icon>add</mat-icon>
+        New Item</button>
+    </mat-card-title>
+
+
+
+  </mat-card-header>
+  <mat-card-content>
+
+    <app-filter  (filter)="searchItem($event)"></app-filter>
+
+    <app-list-view [items]="items" (clickDelete)="delete($event)"></app-list-view>
+  </mat-card-content>
+</mat-card>
